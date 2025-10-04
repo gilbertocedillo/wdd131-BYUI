@@ -1,19 +1,21 @@
 :root {
-  --primary-color: #222;
+  --primary-color: #8e14d1;
   --accent-color: #f04;
   --font-headline: 'Mooli', sans-serif;
   --font-body: Arial, sans-serif;
+  --background-light: #f9f9f9;
+  --text-light: #ffffff;
 }
 
 body {
   margin: 0;
   font-family: var(--font-body);
-  background-color: #f9f9f9;
+  background-color: var(--background-light);
 }
 
 header {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--text-light);
   padding: 1rem;
   text-align: center;
 }
@@ -23,34 +25,31 @@ h1 {
   margin: 0;
 }
 
-#menuBtn {
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-top: 0.5rem;
-  cursor: pointer;
-}
-
 nav {
-  display: none;
-  flex-direction: column;
-  margin-top: 1rem;
-}
-
-nav.open {
-  display: flex;
+  margin-top: 0.5rem;
 }
 
 nav a {
-  color: white;
+  color: var(--text-light);
   text-decoration: none;
-  padding: 0.5rem;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+main {
+  padding: 1rem;
+  text-align: center;
+}
+
+h2 {
+  font-family: var(--font-headline);
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
@@ -60,46 +59,13 @@ nav a {
   height: auto;
   object-fit: cover;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 footer {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--text-light);
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
-}
-
-@media (min-width: 700px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  #menuBtn {
-    display: none;
-  }
-}
-
-@media (min-width: 1000px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-  }
-
-  nav {
-    margin-top: 0;
-  }
 }
