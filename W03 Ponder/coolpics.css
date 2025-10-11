@@ -5,12 +5,14 @@
   --font-body: Arial, sans-serif;
   --background-light: #f9f9f9;
   --text-light: #ffffff;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 body {
   margin: 0;
   font-family: var(--font-body);
   background-color: var(--background-light);
+  color: #333;
 }
 
 header {
@@ -18,6 +20,8 @@ header {
   color: var(--text-light);
   padding: 1rem;
   text-align: center;
+  position: relative;
+  box-shadow: var(--shadow);
 }
 
 h1 {
@@ -25,8 +29,24 @@ h1 {
   margin: 0;
 }
 
+#menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
 nav {
   margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transition: max-height 0.3s ease-out;
 }
 
 nav a {
@@ -34,6 +54,22 @@ nav a {
   text-decoration: none;
   margin: 0 1rem;
   font-weight: bold;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 main {
@@ -54,12 +90,23 @@ h2 {
   padding: 1rem;
 }
 
+.gallery figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.gallery figure:hover {
+  transform: scale(1.05);
+}
+
 .gallery img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: block;
 }
 
 footer {
@@ -68,4 +115,88 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.hide {
+  display: none;
+}
+
+dialog.viewer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  padding: 0;
+  z-index: 1000;
+}
+
+dialog.viewer img {
+  display: block;
+  margin: 20vh auto;
+  width: 90%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+.close-viewer {
+  position: absolute;
+  top: 20vh;
+  right: 5%;
+  background: white;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Small screens: show menu button and hide nav by default */
+@media (max-width: 1000px) {
+  #menuBtn {
+    display: block;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    background-color: var(--primary-color);
+  }
+
+  nav.open {
+    max-height: 400px;
+  }
+
+  nav a {
+    padding: 1rem 0;
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Large screens: ensure nav visible and menu button hidden */
+@media (min-width: 1001px) {
+  #menuBtn {
+    display: none;
+  }
+
+  nav {
+    display: flex !important;
+    max-height: none !important;
+  }
+
+  nav a {
+    padding: 0;
+  }
+
+  .hide {
+    display: block;
+  }
 }
