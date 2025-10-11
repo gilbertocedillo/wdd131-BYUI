@@ -58,3 +58,4 @@ gallery.addEventListener('click', (event) => {
     modal.remove();
   });
 });
+
