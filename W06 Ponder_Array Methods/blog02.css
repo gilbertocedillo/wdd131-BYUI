@@ -1,0 +1,205 @@
+:root {
+    --line-color: #ffcc99; 
+    --title-color: #900; 
+    --text-color: #333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: white;
+    color: var(--text-color); /* Set text color for accessibility */
+}
+
+/* Accessibility: Ensure links have a visible focus indicator */
+.top-nav a:focus {
+    outline: 2px solid var(--title-color); 
+    outline-offset: 2px;
+}
+
+.page-container {
+    max-width: 900px;
+    width: 95%;
+    margin: 0 auto;
+    border: 1px solid var(--line-color);
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 1em 0;
+    border-bottom: 1px solid var(--line-color);
+}
+
+.blog-title {
+    color: var(--title-color);
+    font-size: 2em;
+    margin: 0.2em 0;
+    text-align: center;
+}
+
+.top-nav {
+    display: block;
+    margin-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.top-nav a {
+    color: var(--title-color);
+    text-decoration: none;
+    margin: 0 0.5em;
+    font-size: 0.9em;
+}
+
+/* Updated main element styling for alignment */
+main {
+    padding: 1em;
+    max-width: 900px;
+    width: 95%;
+    margin: 0 auto; 
+}
+
+/* Styling for dynamically generated articles */
+.book-review {
+    margin-bottom: 2em; /* Space between articles */
+    padding-bottom: 1em; 
+}
+
+.book-title {
+    color: var(--title-color);
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    text-align: left; 
+    padding-left: 10px;
+}
+
+.book-image {
+    text-align: center;
+    margin: 1em 0;
+}
+
+.book-image img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Styling for metadata */
+.post-metadata {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.post-metadata p {
+    margin: 0.1em 0; /* Reduced vertical margin */
+    font-size: 0.9em;
+}
+
+/* Increase font size for the date */
+.post-metadata .post-date {
+    font-size: 1.1em; 
+    font-weight: bold;
+}
+
+.post-description {
+    text-align: left;
+    padding: 0 10px;
+}
+
+.post-author {
+    text-align: center;
+    margin: 2em 0 1em 0;
+    font-style: italic;
+    border-bottom: 1px solid var(--line-color);
+    padding-bottom: 1em;
+}
+
+footer {
+    border-top: 1px solid var(--line-color);
+    height: 10px;
+    margin-top: 2em;
+}
+
+/* --- Media Query (Desktop View >= 600px) --- */
+@media (min-width: 600px) {
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end; 
+        padding: 1em 2em 0.5em;
+    }
+
+    .blog-title {
+        text-align: left;
+        flex-grow: 1;
+    }
+
+    .top-nav {
+        text-align: right;
+        display: block;
+    }
+
+    /* Outer Grid: Metadata | Content */
+    .post-main-grid {
+        display: grid;
+        grid-template-columns: 200px 1fr; 
+        gap: 20px;
+        border: none; 
+        padding: 0;
+    }
+    
+    /* Metadata Styling for Grid */
+    .post-metadata {
+        padding-right: 20px;
+        padding-left: 0;
+        text-align: right; /* Right align the list of details */
+        border-right: 1px solid var(--line-color); /* Add right border */
+        align-self: start; 
+    }
+
+    /* Inner Grid: Image | Description */
+    .post-content {
+        text-align: left;
+        display: grid;
+        grid-template-columns: 200px 1fr; 
+        grid-template-rows: auto auto auto;
+        gap: 1em;
+    }
+    
+    .book-title {
+        grid-column: 1 / -1;
+        text-align: left;
+        padding-left: 0;
+        margin-top: 0.1em; /* Adjusted margin for vertical alignment */
+    }
+
+    .book-image {
+        grid-column: 1 / 2;
+        text-align: left;
+        margin: 0;
+    }
+    
+    .book-image img {
+        max-width: 100%; 
+        margin: 0;
+    }
+    
+    .post-description {
+        grid-column: 2 / 3; 
+        grid-row: 2 / 3; 
+        padding: 0;
+        margin-top: 0;
+    }
+
+    .post-author {
+        /* Align author under the main content column */
+        text-align: left;
+        padding-left: 220px;
+    }
+}
