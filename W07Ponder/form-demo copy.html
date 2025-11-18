@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Credit Card Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Styled credit card form with front/back and built-in validation." />
+  <meta name="author" content="Gilberto Cedillo" />
+  <link rel="stylesheet" href="form-demo copy.css" />
+  <link rel="icon" type="image/png" href="Favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <script src="https://use.fontawesome.com/f1e0bf0cbc.js" defer></script>
+</head>
+<body>
+  <!-- Status messages (optional, static for HTML/CSS-only) -->
+  <div id="card-success" class="hidden">
+    <i class="fa fa-check"></i>
+    <p>Payment Successful!</p>
+  </div>
+  <div id="form-errors" class="hidden">
+    <i class="fa fa-exclamation-triangle"></i>
+    <p id="card-error">Please fix the highlighted fields.</p>
+  </div>
+
+  <!-- Form -->
+  <form id="payment-form" novalidate>
+    <div id="form-container">
+      <!-- Card front -->
+      <div id="card-front">
+        <div id="shadow"></div>
+
+        <div id="image-container">
+          <span id="amount">paying: <strong>$99</strong></span>
+          <span id="card-image" aria-hidden="true"></span>
+        </div>
+
+        <label for="card-number">Card Number</label>
+        <input
+          type="text"
+          id="card-number"
+          name="card-number"
+          placeholder="1234 5678 9012 3456"
+          required
+          maxlength="16"
+          pattern="\d{16}"
+        />
+
+        <div id="cardholder-container">
+          <label for="card-holder">Card Holder</label>
+          <input
+            type="text"
+            id="card-holder"
+            name="card-holder"
+            placeholder="e.g. John Doe"
+            required
+          />
+        </div>
+
+        <div id="exp-container">
+          <label for="card-month">Expiration</label>
+          <input
+            id="card-month"
+            name="card-month"
+            type="text"
+            placeholder="MM"
+            required
+            maxlength="2"
+            pattern="\d{2}"
+          />
+          <input
+            id="card-year"
+            name="card-year"
+            type="text"
+            placeholder="YY"
+            required
+            maxlength="2"
+            pattern="\d{2}"
+          />
+        </div>
+
+        <div id="cvc-container">
+          <label for="card-cvc">CVC/CVV</label>
+          <input
+            id="card-cvc"
+            name="card-cvc"
+            type="text"
+            placeholder="123"
+            required
+            maxlength="4"
+            pattern="\d{3,4}"
+          />
+          <p>Last 3 or 4 digits</p>
+        </div>
+      </div>
+
+      <!-- Card back -->
+      <div id="card-back">
+        <div id="card-stripe"></div>
+      </div>
+
+      <!-- Hidden token (placeholder for future integration) -->
+      <input type="text" id="card-token" name="card-token" hidden />
+
+      <!-- Submit -->
+      <button type="submit" id="card-btn">Submit</button>
+    </div>
+  </form>
+</body>
+</html>
