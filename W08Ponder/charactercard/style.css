@@ -13,9 +13,9 @@ body {
 
 .image{
     width: 400px;
-    /* The provided image in the example is a placeholder, a real image URL is needed */
-    /* For a quick example, you could use a placeholder image URL: */
-    /* height: 200px; object-fit: cover; */ 
+    /* Styles to fix the image aspect ratio issue */
+    height: 400px; 
+    object-fit: cover; 
     border-radius: 15px 15px 0 0;
 }
 
@@ -39,12 +39,14 @@ body {
 }
 
 .buttons {
+    /* Ensures buttons are centered as per the original layout */
     text-align: center;
+    padding-bottom: 20px; /* Added padding to give space below the buttons */
 }
 
 button {
     padding: 8px 12px;
-    margin: 20px;
+    margin: 20px 10px; /* Reduced side margin for better fit */
     border: none;
     border-radius: 8px;
     background-color: #5d747b;
