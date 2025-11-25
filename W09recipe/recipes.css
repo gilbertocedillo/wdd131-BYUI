@@ -1,0 +1,309 @@
+/* recipes.css */
+
+/* ---------------------------------------------------------------------- */
+/* Global Styles, Fonts, and Variables */
+/* ---------------------------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
+
+:root {
+    --primary-color: #1B98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: "Caveat", cursive; 
+    --footer-icon-size: 32px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--primary-font);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image Reset and Responsive Rule */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+}
+
+/* Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+h1, h2 {
+    font-family: var(--secondary-font);
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Mobile Layout (Base Styles - up to 600px) */
+/* ---------------------------------------------------------------------- */
+
+.page-header {
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.logo-img {
+    width: 50px; 
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+/* Search Form */
+.search-section {
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-form {
+    display: flex;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-form input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+
+.search-form button {
+    background-color: #fff;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.search-form button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Recipe Card Layout */
+.page-main {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: column; 
+    padding: 0; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    max-width: 500px; 
+    margin: 0 auto;
+}
+
+/* Image and Tag Positioning */
+.recipe-image-container {
+    width: 100%;
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 8px 8px 0 0;
+}
+
+.recipe-image-container img {
+    width: 100%;
+}
+
+.tags-container {
+    position: absolute; 
+    top: 10px; /* Positioned 10px from the top edge */
+    left: 10px; /* Positioned 10px from the left edge */
+    z-index: 10;
+}
+
+.tag {
+    background-color: var(--text-light); 
+    color: var(--text-dark); 
+    border: 1px solid #333; 
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85em;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.recipe-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem; 
+}
+
+.recipe-title {
+    font-size: 2.2em; 
+    margin-top: 0.5rem;
+}
+
+/* Rating Stars */
+.rating {
+    font-size: 1.4em; 
+    color: orange; 
+}
+
+/* Hide description on mobile (to match fcvbn.png mockup) */
+.recipe-description {
+    display: none; 
+}
+
+/* Placeholder Lines (used when description is hidden) */
+.recipe-summary-placeholder {
+    display: block;
+    /* Styles for the gray lines go here if needed */
+}
+
+/* Footer */
+.page-footer {
+    background-color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem; 
+}
+
+.social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 0.5rem;
+}
+
+.social img {
+    width: var(--footer-icon-size);
+    height: var(--footer-icon-size);
+    border: 1px solid #333; 
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.attribution {
+    font-size: 0.6em; 
+    text-align: center;
+    text-decoration: none; 
+}
+
+/* ---------------------------------------------------------------------- */
+/* Tablet/Mid-Screen Breakpoint (600px) - Matches cfgv.png mockup */
+/* ---------------------------------------------------------------------- */
+
+@media screen and (min-width: 600px) {
+    /* Recipe Card Layout */
+    .recipe-card {
+        flex-direction: row; 
+        align-items: flex-start;
+        padding: 1rem; 
+    }
+
+    /* Adjust image and details proportions */
+    .recipe-image-container {
+        flex: 1 1 40%; /* Image takes up about 40% of the space */
+        border-radius: 8px 0 0 8px; 
+    }
+    
+    .recipe-details {
+        flex: 1 1 60%; /* Details take up about 60% of the space */
+        padding: 0 0 0 1rem; 
+    }
+    
+    /* Show description on larger screens (to match cfgv.png mockup) */
+    .recipe-description {
+        display: block; 
+    }
+    
+    /* Hide placeholders when description is visible */
+    .recipe-summary-placeholder {
+        display: none; 
+    }
+
+    /* Reposition tag relative to the side image */
+    .tags-container {
+        position: absolute;
+        top: 10px;
+        right: 10px; /* Moved tag to the right edge of the image */
+        left: unset; /* Ensures the tag doesn't stay stuck to the left from mobile styles */
+    }
+
+    /* Footer Layout */
+    .page-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+    
+    .copyright {
+        order: 1;
+    }
+
+    .attribution {
+        order: 2;
+        margin-left: 1rem;
+    }
+
+    .social {
+        order: 3;
+        margin-bottom: 0;
+    }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Desktop Breakpoint (960px) */
+/* ---------------------------------------------------------------------- */
+
+@media screen and (min-width: 960px) {
+    .page-main {
+        max-width: 1200px; 
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    .recipe-card {
+        padding: 2rem;
+    }
+}
