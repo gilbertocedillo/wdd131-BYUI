@@ -1,0 +1,35 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F5F5F5;
+  color: #0A192F;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #396E94;
+  color: #FFFFFF;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #396E94;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #A43312;
+}
+
+footer {
+  background-color: #E7C24F;
+  text-align: center;
+  padding: 1rem;
+}
