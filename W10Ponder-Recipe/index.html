@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Book</title>
+  <meta name="description" content="A collection of delicious and easy-to-follow recipes. Find your next favorite dish!">
+  <meta name="author" content="Gilberto Cedillo">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"> 
+  <link rel="stylesheet" href="recipes.css">
+</head>
+<body>
+  <header class="page-header">
+    <a href="index.html" class="logo-link">
+      <img src="images/recipe-book.png" alt="Recipe Book Logo" class="logo-img">
+      <h1>RECIPE BOOK</h1>
+    </a>
+  </header>
+
+  <main class="page-main">
+    <section class="search-section">
+      <form class="search-form">
+        <label for="recipe-search" class="sr-only">Find a recipe</label>
+        <input type="text" id="recipe-search" placeholder="Find a recipe">
+        <button type="submit" aria-label="Search">
+          <img src="images/search_icon.svg" alt="search icon"> 
+        </button>
+      </form>
+    </section>
+
+    <section class="recipe-card-list"></section>
+  </main>
+
+  <footer class="page-footer">
+    <p class="copyright">&copy; Gilberto Cedillo 2025</p>
+    <div class="social">
+      <a href="#"><img src="images/instagram_icon.avif" alt="instagram icon"></a>
+      <a href="#"><img src="images/youtube_icon.png" alt="youtube icon"></a>
+      <a href="#"><img src="images/pinterest_icon.png" alt="pinterest icon"></a>
+    </div>
+    <p class="attribution">
+      <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
+    </p>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
