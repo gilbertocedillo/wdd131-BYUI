@@ -1,35 +1,383 @@
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #F5F5F5;
-  color: #0A192F;
+/* CyberSafe Advocacy Site Plan CSS */
+/* Using custom color palette: #1A24EB, #EB1ACF, #A43312, #000000, #29F0F7 */
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-header {
-  background-color: #396E94;
-  color: #FFFFFF;
-  padding: 1rem;
-  text-align: center;
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #FFFFFF;
+  color: #000000; /* Black for main text */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2, h3 {
+/* Header */
+header {
+  background-color: #1A24EB; /* Primary blue */
+  color: #FFFFFF;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
   font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Section Styling */
+section {
+  background-color: #FFFFFF;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1000px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #29F0F7; /* Cyan accent */
+}
+
+section h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #1A24EB; /* Primary blue */
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #EB1ACF; /* Magenta accent */
+}
+
+section h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #1A24EB; /* Primary blue */
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+section h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #000000; /* Black */
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Typography */
+p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+ul, ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+strong {
+  color: #A43312; /* Brick red for emphasis */
+  font-weight: 600;
+}
+
+/* Color Samples */
+.color-samples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.color-sample {
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #000000; /* Black text */
+}
+
+.color-sample p:first-child {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.color-sample p:last-child {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Color Sample Specific Backgrounds */
+.color-sample:nth-child(1) {
+  background-color: #1A24EB; /* Primary Blue */
+  color: #FFFFFF; /* White text for contrast */
+}
+
+.color-sample:nth-child(2) {
+  background-color: #EB1ACF; /* Magenta */
+  color: #FFFFFF; /* White text for contrast */
+}
+
+.color-sample:nth-child(3) {
+  background-color: #A43312; /* Brick Red */
+  color: #FFFFFF; /* White text for contrast */
+}
+
+.color-sample:nth-child(4) {
+  background-color: #000000; /* Black */
+  color: #FFFFFF; /* White text for contrast */
+}
+
+.color-sample:nth-child(5) {
+  background-color: #29F0F7; /* Cyan */
+  color: #000000; /* Black text for contrast */
+}
+
+/* Typography Example */
+.typography-example {
+  background-color: #F8F9FA;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #E0E0E0;
+  margin: 1.5rem 0;
+}
+
+.typography-example h4 {
+  color: #1A24EB; /* Primary blue */
+  margin-bottom: 1rem;
+}
+
+.typography-example p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Navigation */
+nav {
+  background-color: #F8F9FA;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  text-align: center;
+  border: 1px solid #E0E0E0;
 }
 
 nav a {
-  margin: 0 10px;
+  display: inline-block;
+  margin: 0 15px;
+  padding: 0.5rem 1rem;
   text-decoration: none;
-  color: #396E94;
+  color: #1A24EB; /* Primary blue */
   font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
-  color: #A43312;
+  color: #FFFFFF;
+  background-color: #1A24EB; /* Primary blue */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(26, 36, 235, 0.2);
 }
 
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E0E0E0;
+}
+
+/* Code Blocks */
+pre {
+  background-color: #1A1A1A;
+  color: #29F0F7; /* Cyan for code */
+  padding: 1.5rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  background-color: #F1F5F9;
+  color: #A43312; /* Brick red for inline code */
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+/* Links */
+a {
+  color: #1A24EB; /* Primary blue */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #A43312; /* Brick red on hover */
+  text-decoration: underline;
+}
+
+/* Footer */
 footer {
-  background-color: #E7C24F;
+  background-color: #29F0F7; /* Cyan */
+  color: #000000; /* Black text */
   text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+footer p:last-child {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0;
+}
+
+/* Buttons and Interactive Elements */
+button, .button {
+  background-color: #1A24EB; /* Primary blue */
+  color: #FFFFFF;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover, .button:hover {
+  background-color: #EB1ACF; /* Magenta on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(235, 26, 207, 0.3);
+}
+
+/* Warning/Alert Styling */
+.warning {
+  background-color: #A43312; /* Brick red */
+  color: #FFFFFF;
   padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  border-left: 4px solid #EB1ACF; /* Magenta accent */
+}
+
+/* Success Styling */
+.success {
+  background-color: #29F0F7; /* Cyan */
+  color: #000000; /* Black text */
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  border-left: 4px solid #1A24EB; /* Blue accent */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  section {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  section h2 {
+    font-size: 1.6rem;
+  }
+  
+  section h3 {
+    font-size: 1.3rem;
+  }
+  
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+  }
+  
+  .color-samples {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  section {
+    padding: 1.25rem;
+  }
+  
+  section h2 {
+    font-size: 1.4rem;
+  }
+  
+  pre {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+    font-size: 12pt;
+  }
+  
+  section {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+  
+  nav, footer {
+    display: none;
+  }
+  
+  /* Ensure good contrast for print */
+  a {
+    color: #000000;
+  }
+  
+  .color-samples {
+    display: none;
+  }
 }

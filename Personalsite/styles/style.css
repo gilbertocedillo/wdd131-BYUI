@@ -1,0 +1,126 @@
+:root {
+  --primary-blue: #1A24EB;
+  --secondary-magenta: #EB1ACF;
+  --accent-cyan: #29F0F7;
+  --text-dark: #1a1a1a;
+  --text-light: #f1f1f1;
+  --bg-light: #ffffff;
+  --bg-dark: #121212;
+  --gray-100: #f5f5f5;
+  --gray-300: #e0e0e0;
+  --gray-600: #666;
+  --max-width: 1100px;
+  --radius: 8px;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --transition: 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --bg-light: #121212;
+  --text-dark: #f1f1f1;
+  --gray-100: #1f1f1f;
+  --gray-300: #333;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.7;
+  transition: background var(--transition), color var(--transition);
+  padding-bottom: 3rem;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.5rem;
+}
+
+header {
+  background: var(--primary-blue);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.3rem;
+  margin-bottom: 0.4rem;
+}
+
+header p {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+section {
+  background: var(--gray-100);
+  padding: 1.8rem;
+  margin: 1.5rem 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: background var(--transition);
+}
+
+section:hover {
+  background: var(--gray-300);
+}
+
+section h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.9rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  border-left: 6px solid var(--secondary-magenta);
+  padding-left: 0.6rem;
+}
+
+section h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 1.4rem;
+  color: var(--secondary-magenta);
+}
+
+section p {
+  margin: 0.6rem 0;
+  font-size: 1.05rem;
+  color: var(--gray-600);
+}
+
+ul {
+  margin: 0.7rem 0 1rem 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+li strong {
+  color: var(--primary-blue);
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  section {
+    padding: 1.3rem;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+  }
+}

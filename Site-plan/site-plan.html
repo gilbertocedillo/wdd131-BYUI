@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CyberSafe Advocacy Site Plan</title>
   <link rel="stylesheet" href="styles/site-plan.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -11,60 +13,243 @@
     <p>Gilberto Cedillo | WDD 131-01</p>
   </header>
 
-  <section id="overview">
-    <h2>Overview</h2>
-    <h3>Purpose</h3>
-    <p>This site provides resources and interactive tools to help understand basic cybersecurity principles and cloud safety.</p>
+  <main>
+    <!-- Site Name Section -->
+    <section id="site-name">
+      <h2>Site Name</h2>
+      <p><strong>CyberSafe Advocacy</strong> - Your trusted resource for cybersecurity education and online safety tools.</p>
+      <p>The name was chosen to clearly communicate our mission: advocating for safer online practices through education and tools.</p>
+    </section>
 
-    <h3>Audience</h3>
-    <p>Students, or all people who seeking accessible online safety resources about cybersecurity.</p>
+    <!-- Site Purpose Section -->
+    <section id="site-purpose">
+      <h2>Site Purpose</h2>
+      <p>The CyberSafe Advocacy website is designed to make cybersecurity accessible to everyone. We provide clear, practical resources that help users understand online threats, protect their personal information, and develop safer digital habits. Through interactive tools like quizzes and visual dashboards, we transform complex security concepts into actionable knowledge that anyone can apply immediately.</p>
+      <p>Our goal is to reduce cybersecurity incidents by empowering users with the knowledge they need to protect themselves online.</p>
+    </section>
 
-    <h3>Dynamic Elements</h3>
-    <ul>
-      <li>Language toggle (English/Spanish)</li>
-      <li>Interactive quiz about base topics about cybersecurity</li>
-      <li>Charts with security statistics yearly</li>
-    </ul>
-  </section>
+    <!-- Scenarios Section -->
+    <section id="scenarios">
+      <h2>Target Audience Scenarios</h2>
+      <p>Our typical visitors include:</p>
+      <ul>
+        <li><strong>College students</strong> who need to secure their devices on public campus networks</li>
+        <li><strong>Working professionals</strong> seeking to protect sensitive work data while working remotely</li>
+        <li><strong>Parents</strong> wanting to create safer online environments for their children</li>
+        <li><strong>Small business owners</strong> needing basic cybersecurity implementation guidance</li>
+        <li><strong>Senior citizens</strong> looking to avoid online scams and protect their personal information</li>
+      </ul>
+      <p>Common questions they ask:</p>
+      <ul>
+        <li>"How do I create a strong password I can actually remember?"</li>
+        <li>"What should I do if I think my email has been hacked?"</li>
+        <li>"Are password managers really safe to use?"</li>
+        <li>"How can I tell if a website is secure before entering my information?"</li>
+        <li>"What are the most common scams I should watch out for?"</li>
+        <li>"How do I set up two-factor authentication on my accounts?"</li>
+      </ul>
+    </section>
 
-  <section id="branding">
-    <h2>Branding</h2>
-    <h3>Logo</h3>
-    <img src="images/logositeplan.png" alt="Site Logo">
-    <h3>Color Palette</h3>
-    <p>Palette URL: <a href="https://coolors.co/396e94-e7c24f-a43312-381d2a-aabd8c">Coolors Palette</a></p>
-    <ul>
-      <li>Primary: #396E94</li>
-      <li>Secondary: #E7C24F</li>
-      <li>Accent 1: #A43312</li>
-      <li>Accent 2: #AABD8C</li>
-    </ul>
-    <h3>Typography</h3>
-    <p>Heading Font: Roboto</p>
-    <p>Paragraph Font: Open Sans</p>
-  </section>
+    <!-- Overview Section -->
+    <section id="overview">
+      <h2>Overview</h2>
+      
+      <h3>Purpose</h3>
+      <p>CyberSafe Advocacy provides comprehensive, beginner-friendly resources to help users understand and implement essential cybersecurity practices. Our platform combines educational content with interactive tools to address real-world security challenges faced by everyday internet users. We focus on practical solutions that can be implemented immediately.</p>
+      
+      <h3>Audience</h3>
+      <p><strong>Primary Audience:</strong> Students and non-technical users aged 18-35 seeking practical online safety guidance. These users are comfortable with technology but lack specialized security knowledge.</p>
+      <p><strong>Secondary Audience:</strong> Educators, parents, and small business owners who need reliable cybersecurity resources for their communities or organizations. All content is designed to be accessible regardless of technical background.</p>
+      <p><strong>Demographics:</strong> 60% college-educated, 40% have experienced some form of cyber threat, 75% use multiple devices daily, 55% are concerned about data privacy but unsure how to protect themselves.</p>
+      
+      <h3>Dynamic Elements</h3>
+      <ul>
+        <li><strong>Language Toggle:</strong> Switch between English and Spanish for all content. This feature will use JavaScript to dynamically replace text content and update interface elements.</li>
+        <li><strong>Interactive Quiz:</strong> 10-question assessment with immediate feedback, scoring, and personalized recommendations. Uses JavaScript arrays to store questions, objects for question data, and functions to calculate scores.</li>
+        <li><strong>Security Statistics Dashboard:</strong> Animated charts showing current cybersecurity trends and threat data. Will use Chart.js library with data fetched from a JSON file.</li>
+        <li><strong>Password Strength Analyzer:</strong> Real-time evaluation of password security with improvement suggestions. Uses JavaScript event listeners and regular expressions to analyze input.</li>
+        <li><strong>Resource Filter System:</strong> Dynamic filtering of tutorials and checklists by topic and difficulty level. Uses JavaScript array methods (filter, map) to display content.</li>
+        <li><strong>Dark/Light Mode Toggle:</strong> CSS variable switching for accessibility and user preference.</li>
+      </ul>
+    </section>
 
-  <section id="navigation">
-    <h2>Navigation</h2>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Resources</a>
-      <a href="#">Contact</a>
-    </nav>
-  </section>
+    <!-- Branding Section -->
+    <section id="branding">
+      <h2>Branding</h2>
+      
+      <h3>Logo</h3>
+      <img src="images/logositeplan.png" alt="CyberSafe Advocacy Logo - A blue shield with a gold lock icon and site name" width="300">
+      <p>The logo features a blue shield with a gold lock symbol, representing protection and security. The typography uses a clean, modern sans-serif font to convey professionalism and approachability.</p>
+      
+      <h3>Color Palette</h3>
+      <p>Palette URL: <a href="https://coolors.co/1a24eb-eb1acf-a43312-000000-29f0f7" target="_blank" rel="noopener noreferrer">Coolors Palette</a></p>
+      <div class="color-samples">
+        <div class="color-sample">
+          <p>Primary: #1A24EB</p>
+          <p>Electric Blue - Headers and primary actions</p>
+        </div>
+        <div class="color-sample">
+          <p>Secondary: #EB1ACF</p>
+          <p>Vibrant Magenta - Accents and highlights</p>
+        </div>
+        <div class="color-sample">
+          <p>Accent 1: #A43312</p>
+          <p>Brick Red - Warnings and emphasis</p>
+        </div>
+        <div class="color-sample">
+          <p>Dark: #000000</p>
+          <p>Pure Black - Text and dark elements</p>
+        </div>
+        <div class="color-sample">
+          <p>Accent 2: #29F0F7</p>
+          <p>Cyan Blue - Borders and success states</p>
+        </div>
+      </div>
+      
+      <h3>Typography</h3>
+      <p><strong>Heading Font:</strong> Roboto (Bold 700) - Clean, modern, and highly readable for headers and titles.</p>
+      <p><strong>Paragraph Font:</strong> Open Sans (Regular 400) - Excellent readability for body text with a friendly appearance.</p>
+      <p><strong>Code Font:</strong> Monospace - Used for displaying code snippets and technical terms.</p>
+      
+      <div class="typography-example">
+        <h4 style="font-family: 'Roboto', sans-serif; font-weight: 700;">Example Heading (Roboto Bold)</h4>
+        <p style="font-family: 'Open Sans', sans-serif;">Example paragraph text using Open Sans. This font provides excellent readability for longer content while maintaining a professional appearance. The slightly rounded letterforms make the text approachable and easy to read.</p>
+      </div>
+    </section>
 
-  <section id="wireframes">
-    <h2>Wireframes</h2>
-    <p>Home Page Wireframe</p>
-    <img src="images/Page1.png" alt="Home Wireframe">
-    <p>Resources Page Wireframe</p>
-    <img src="images/Page2.png" alt="Resources Wireframe">
-     <p>Resources Page Wireframe</p>
-    <img src="images/Page3.png" alt="Resources Wireframe">
-  </section>
+    <!-- Navigation Section -->
+    <section id="navigation">
+      <h2>Navigation</h2>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="quiz.html">Cybersecurity Quiz</a>
+        <a href="resources.html">Safety Resources</a>
+      </nav>
+      <p>Navigation will be implemented as a responsive menu that collapses to a hamburger menu on mobile devices. Active page will be highlighted using the accent color (#EB1ACF).</p>
+    </section>
+
+    <!-- Content Details Section -->
+    <section id="content">
+      <h2>Content Details</h2>
+      
+      <h3>Home Page Content</h3>
+      <ul>
+        <li>Hero section with tagline: "Empowering You with Cybersecurity Knowledge"</li>
+        <li>Interactive statistics dashboard showing real-time threat data</li>
+        <li>Featured security tips of the week</li>
+        <li>Quick access to popular resources</li>
+        <li>Testimonials from users</li>
+        <li>Call-to-action buttons for starting the quiz or browsing resources</li>
+      </ul>
+      
+      <h3>Quiz Page Content</h3>
+      <ul>
+        <li>10 multiple-choice questions covering basic cybersecurity topics</li>
+        <li>Immediate feedback after each question with explanations</li>
+        <li>Progress tracker showing current question and score</li>
+        <li>Final results page with personalized recommendations</li>
+        <li>Option to retake quiz or share results</li>
+        <li>Certificate of completion for scores above 80%</li>
+      </ul>
+      
+      <h3>Resources Page Content</h3>
+      <ul>
+        <li>Video tutorials (5-10 minute explainer videos)</li>
+        <li>Glossary of cybersecurity terms</li>
+        <li>Printable security checklists for different scenarios</li>
+        <li>Infographics on common threats and protection methods</li>
+        <li>Downloadable guides on topics like password management and phishing detection</li>
+        <li>Recommended websites for further learning</li>
+        <li>Recommended tools and software for enhanced security</li>
+      </ul>
+    </section>
+
+    <!-- Wireframes Section -->
+    <section id="wireframes">
+      <h2>Wireframes</h2>
+      
+      <h3>Home Page Layout</h3>
+      <p>The home page features a welcoming hero section with clear value proposition, interactive security statistics dashboard showing current threat data, quick-access safety tips, and featured resources section. The design emphasizes clear information hierarchy with visual elements that engage users immediately.</p>
+      <img src="images/Page1.png" alt="Home page wireframe showing header with logo and navigation, hero welcome section, interactive statistics dashboard with charts, quick tips card grid, and footer with contact information" width="800">
+      
+      <h3>Interactive Quiz Page</h3>
+      <p>The quiz interface presents cybersecurity questions with multiple-choice responses in a clean card layout. Includes a progress tracker showing current position, provides instant feedback with explanations for each answer, calculates a final security awareness score, and offers personalized recommendations based on results. This interactive element is central to user engagement and learning.</p>
+      <img src="images/Page2.png" alt="Quiz page wireframe showing question display card, four multiple choice options with radio buttons, progress bar at top, immediate feedback area, navigation buttons, and score display in sidebar" width="800">
+      
+      <h3>Resources Library Page</h3>
+      <p>The resources page organizes educational materials into categorized sections with search and filter functionality. Users can access downloadable checklists in PDF format, watch embedded video tutorials, view informative infographics, and filter content based on their specific interests or skill levels. Includes a featured resource section and user rating system.</p>
+      <img src="images/Page3.png" alt="Resources page wireframe showing search bar at top, categorized content tabs, grid of resource cards with icons, filter options by difficulty and topic, and download statistics" width="800">
+      
+      <h3>Mobile Wireframe Considerations</h3>
+      <p>All pages will feature responsive designs with:</p>
+      <ul>
+        <li>Single column layout for mobile devices</li>
+        <li>Hamburger menu for navigation</li>
+        <li>Touch-friendly buttons and form elements</li>
+        <li>Optimized image sizes for faster loading</li>
+        <li>Simplified charts and data visualizations</li>
+      </ul>
+    </section>
+
+    <!-- JavaScript Section -->
+    <section id="javascript">
+      <h2>JavaScript Implementation Plan</h2>
+      
+      <h3>Module Structure</h3>
+      <pre><code>
+// quiz.js - ES Module for quiz functionality
+import { questions } from './questions.js';
+import { calculateScore, generateRecommendations } from './quiz-logic.js';
+
+// main.js - Main application module
+import { initQuiz } from './quiz.js';
+import { initLanguageToggle } from './language.js';
+import { initCharts } from './charts.js';
+      </code></pre>
+      
+      <h3>Data Structures</h3>
+      <pre><code>
+// Questions stored as array of objects
+const questions = [
+  {
+    id: 1,
+    question: "What is phishing?",
+    options: [
+      "A fishing hobby",
+      "Fraudulent attempt to steal information",
+      "A type of computer virus",
+      "A security protocol"
+    ],
+    correctAnswer: 1,
+    explanation: "Phishing is a cyber attack that uses disguised email as a weapon..."
+  },
+  // ... more questions
+];
+
+// User progress object
+const userProgress = {
+  currentQuestion: 0,
+  score: 0,
+  answers: [],
+  completed: false
+};
+      </code></pre>
+      
+      <h3>Key Functions</h3>
+      <ul>
+        <li><code>loadQuestion()</code> - Displays current question and options</li>
+        <li><code>checkAnswer()</code> - Validates answer and updates score</li>
+        <li><code>updateProgress()</code> - Updates progress bar and question counter</li>
+        <li><code>showResults()</code> - Displays final score and recommendations</li>
+        <li><code>toggleLanguage()</code> - Switches between English and Spanish</li>
+        <li><code>filterResources()</code> - Filters resources based on selected criteria</li>
+      </ul>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 CyberSafe Advocacy</p>
+    <p>&copy; 2025 CyberSafe Advocacy | Last Updated: December 2025</p>
+    <p>This site plan document outlines the vision and specifications for the CyberSafe Advocacy website.</p>
   </footer>
 
   <script src="script.js"></script>

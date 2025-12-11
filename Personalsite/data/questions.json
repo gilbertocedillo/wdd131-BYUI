@@ -1,0 +1,144 @@
+{
+  "quizQuestions": [
+    {
+      "id": 1,
+      "question": "What is phishing?",
+      "options": [
+        "A fishing hobby",
+        "A fraudulent attempt to obtain sensitive information by disguising as a trustworthy entity",
+        "A type of computer virus",
+        "A security protocol for websites"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Phishing is a cyber attack that uses disguised email as a weapon. The goal is to trick the email recipient into believing that the message is something they want or need.",
+      "category": "basic",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 2,
+      "question": "What is the minimum recommended length for a strong password?",
+      "options": [
+        "6 characters",
+        "8 characters",
+        "12 characters",
+        "16 characters"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Security experts recommend using passwords with at least 12 characters to provide adequate protection against brute-force attacks.",
+      "category": "password",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 3,
+      "question": "What does HTTPS in a website URL indicate?",
+      "options": [
+        "The website has high traffic",
+        "The connection between your browser and the website is encrypted",
+        "The website is government-owned",
+        "The website is free to use"
+      ],
+      "correctAnswer": 1,
+      "explanation": "HTTPS (Hypertext Transfer Protocol Secure) indicates that the connection between your browser and the website is encrypted, protecting your data from interception.",
+      "category": "web",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 4,
+      "question": "What is two-factor authentication (2FA)?",
+      "options": [
+        "Using two different passwords",
+        "A security process where users provide two different authentication factors",
+        "Logging in from two different devices",
+        "Having two email addresses for verification"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Two-factor authentication adds an extra layer of security by requiring two different types of credentials before granting access.",
+      "category": "authentication",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 5,
+      "question": "What should you do if you receive a suspicious email asking for personal information?",
+      "options": [
+        "Reply with the requested information",
+        "Click on any links to verify the sender",
+        "Delete it without opening",
+        "Report it as phishing and delete it"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Suspicious emails should be reported as phishing to your email provider and then deleted without opening any attachments or clicking any links.",
+      "category": "email",
+      "difficulty": "beginner"
+    },
+    {
+      "id": 6,
+      "question": "What is a VPN used for?",
+      "options": [
+        "To increase internet speed",
+        "To encrypt internet traffic and hide your IP address",
+        "To block all advertisements",
+        "To share files with friends"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A VPN (Virtual Private Network) encrypts your internet connection and masks your IP address, providing privacy and security online.",
+      "category": "privacy",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 7,
+      "question": "What is the purpose of a password manager?",
+      "options": [
+        "To remember passwords for you",
+        "To generate and store strong, unique passwords for each account",
+        "To share passwords with family members",
+        "To recover forgotten passwords"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Password managers generate, store, and autofill strong, unique passwords for all your accounts, eliminating the need to remember them.",
+      "category": "password",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 8,
+      "question": "What does 'social engineering' refer to in cybersecurity?",
+      "options": [
+        "Engineering social media platforms",
+        "Psychological manipulation to trick people into revealing confidential information",
+        "Creating social networks for security professionals",
+        "Studying social behavior patterns"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Social engineering uses psychological manipulation to trick users into making security mistakes or giving away sensitive information.",
+      "category": "social",
+      "difficulty": "advanced"
+    },
+    {
+      "id": 9,
+      "question": "What is the safest way to use public Wi-Fi?",
+      "options": [
+        "Use it for all activities",
+        "Avoid accessing sensitive information and use a VPN",
+        "Only use it during off-peak hours",
+        "Change your passwords immediately after use"
+      ],
+      "correctAnswer": 1,
+      "explanation": "When using public Wi-Fi, avoid accessing sensitive accounts and always use a VPN to encrypt your connection.",
+      "category": "network",
+      "difficulty": "intermediate"
+    },
+    {
+      "id": 10,
+      "question": "What should you do regularly to protect your devices?",
+      "options": [
+        "Restart them daily",
+        "Install software updates and security patches",
+        "Change their physical location",
+        "Clean them with disinfectant"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Regularly installing software updates and security patches is crucial for protecting your devices from known vulnerabilities.",
+      "category": "devices",
+      "difficulty": "beginner"
+    }
+  ]
+}

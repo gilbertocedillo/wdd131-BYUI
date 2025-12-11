@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSafe Advocacy - Security Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/quiz.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navigation-wrap">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="CyberSafe Logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
+                    <i class="fas fa-bars navbar-toggler-icon"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="resources.html">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="quiz.html">Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="site-plan.html">Site Plan</a>
+                        </li>
+                        <li><button class="main-btn">(555) 123-4567</button></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="quiz-container">
+        <div class="container">
+            <div class="quiz-header">
+                <h2>Cybersecurity Knowledge Quiz</h2>
+                <p>Test your understanding of online safety with 10 multiple-choice questions.</p>
+            </div>
+
+            <!-- Quiz Control Buttons -->
+            <div class="quiz-control-buttons">
+                <button id="startQuizBtn" class="btn btn-success">
+                    <i class="fas fa-play me-2"></i>Start Quiz
+                </button>
+                <button id="pauseQuizBtn" class="btn btn-warning" disabled>
+                    <i class="fas fa-pause me-2"></i>Pause
+                </button>
+                <button id="restartQuizBtn" class="btn btn-secondary">
+                    <i class="fas fa-redo me-2"></i>Restart
+                </button>
+                <button id="resetTimerBtn" class="btn btn-info">
+                    <i class="fas fa-sync-alt me-2"></i>Reset Timer
+                </button>
+            </div>
+
+            <div class="quiz-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-info">
+                    Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span>
+                </div>
+            </div>
+
+            <div class="quiz-content-simple">
+                <div class="question-card" id="questionCard">
+                    <div class="question-header">
+                        <h3 id="questionText">Loading question...</h3>
+                    </div>
+
+                    <div class="options-container" id="optionsContainer">
+                        <!-- Options will be loaded by JavaScript -->
+                    </div>
+
+                    <div class="quiz-feedback" id="quizFeedback"></div>
+
+                    <div class="quiz-navigation">
+                        <button id="prevBtn" class="btn btn-outline-secondary" disabled>
+                            <i class="fas fa-arrow-left me-2"></i>Previous
+                        </button>
+                        <div class="quiz-score-display">
+                            <span>Score:</span>
+                            <strong id="currentScore">0</strong>/<span id="maxScore">10</span>
+                        </div>
+                        <button id="nextBtn" class="btn btn-primary">
+                            Next<i class="fas fa-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <aside class="quiz-sidebar-simple">
+                    <div class="score-display">
+                        <h4><i class="fas fa-trophy"></i> Your Score</h4>
+                        <div class="score-circle-simple">
+                            <span id="scorePercentage">0</span>%
+                        </div>
+                        <p id="scoreMessage">Start the quiz to see your score!</p>
+                    </div>
+
+                    <div class="timer-display">
+                        <h4><i class="fas fa-clock"></i> Time Spent</h4>
+                        <div class="time-display">
+                            <span id="minutes">00</span>:<span id="seconds">00</span>
+                        </div>
+                        <small>Click Start Quiz to begin timing</small>
+                    </div>
+
+                    <div class="quiz-tips">
+                        <h4><i class="fas fa-lightbulb"></i> Quiz Tips</h4>
+                        <ul>
+                            <li>Read each question carefully</li>
+                            <li>You can pause and resume anytime</li>
+                            <li>Review explanations after answering</li>
+                            <li>Use keyboard shortcuts (1-4, Space, R)</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-card">
+                    <div class="results-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Quiz Results</h3>
+                    </div>
+
+                    <div class="results-score">
+                        <div class="final-score">
+                            <span id="finalScore">0</span>/<span>10</span>
+                        </div>
+                        <div class="score-percentage">
+                            <span id="finalPercentage">0</span>%
+                        </div>
+                    </div>
+
+                    <div class="results-message" id="resultsMessage">
+                        <!-- Message will be loaded by JavaScript -->
+                    </div>
+
+                    <div class="results-recommendations">
+                        <h4>Recommendations</h4>
+                        <ul class="recommendations-list" id="recommendationsList">
+                            <!-- Recommendations will be loaded by JavaScript -->
+                        </ul>
+                    </div>
+
+                    <div class="results-actions">
+                        <button id="retakeQuiz" class="btn btn-primary">
+                            <i class="fas fa-redo me-2"></i>Retake Quiz
+                        </button>
+                        <button id="shareResults" class="btn btn-secondary">
+                            <i class="fas fa-share-alt me-2"></i>Share Results
+                        </button>
+                        <a href="resources.html" class="btn btn-outline-primary">
+                            <i class="fas fa-book me-2"></i>Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>CyberSafe Advocacy</h3>
+                    <p>Making cybersecurity accessible to everyone.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="quiz.html">Security Quiz</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="site-plan.html">Site Plan</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> info@cybersafe.org</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Rexburg, ID, USA</p>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> CyberSafe Advocacy. All rights reserved.</p>
+                <p>This site is for educational purposes only.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="scripts/quiz.js"></script>
+</body>
+</html>
