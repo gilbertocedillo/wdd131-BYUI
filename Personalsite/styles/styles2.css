@@ -1,0 +1,436 @@
+/* ============================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+============================================ */
+
+/* --------------------------------------------------------------------------
+   PARA TABLETS GRANDES (1024px y menos)
+-------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    /* about section */
+    .about-section .text-sec {
+        padding-left: 1.5rem;
+    }
+    
+    .explore-food .card img {
+        height: 220px;
+    }
+    
+    .testimonial-section .carousel-item {
+        padding: 8rem 2.5rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   PARA TABLETS (991px y menos) - FIX MENÚ HAMBURGUESA
+-------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+    /* custome classes */
+    .text-content {
+        width: 100%;
+    }
+
+    /* navbar brand */
+    .navigation-wrap .navbar-brand img {
+        height: 3.8125rem;
+    }
+    
+    .navigation-wrap {
+        text-align: center;
+        background-color: var(--white-color);
+        min-height: 70px;
+        padding: 0.5rem 0;
+    }
+    
+    .navigation-wrap .nav-link {
+        line-height: 1.875rem;
+        font-size: 1.1rem;
+        padding: 0.75rem 0;
+    }
+    
+    /* FIX CRÍTICO: Menú hamburguesa para móviles */
+    .navbar-collapse {
+        position: fixed !important;
+        top: 0;
+        left: -100%;
+        width: 80% !important;
+        height: 100vh !important;
+        background: var(--white-color) !important;
+        padding: 5rem 2rem 2rem !important;
+        transition: left 0.3s ease !important;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1) !important;
+        z-index: 1050 !important;
+        overflow-y: auto !important;
+        margin-top: 0 !important;
+    }
+    
+    .navbar-collapse.show {
+        left: 0 !important;
+    }
+    
+    /* Overlay oscuro cuando el menú está abierto */
+    .navbar-collapse::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 20%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+    
+    .nav-item {
+        display: block !important;
+        margin: 0.5rem 0 !important;
+        text-align: left !important;
+        width: 100%;
+    }
+    
+    .nav-link {
+        display: block !important;
+        width: 100%;
+        border-bottom: 1px solid #eee !important;
+        padding: 0.75rem 0 !important;
+    }
+    
+    .navigation-wrap .main-btn {
+        margin: 1rem 0 0 0 !important;
+        width: 100%;
+        display: block;
+    }
+    
+    /* Botón hamburguesa siempre visible */
+    .navbar-toggler {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 1100 !important;
+        border: 2px solid var(--primary-color) !important;
+        padding: 0.5rem 0.75rem !important;
+        margin-right: 1rem !important;
+    }
+    
+    .navbar-toggler-icon {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(26, 36, 235, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+
+    /* Banner Design */
+    .top-banner {
+        padding: 12rem 0 9.375rem;
+    }
+    
+    .top-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Carousel Design */
+    .testimonial-section .carousel-item {
+        padding: 7rem 2rem;
+    }
+    
+    /* Footer fixes */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   PARA MÓVILES (767px y menos) - FIX PROBLEMAS MÓVIL
+-------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+    /* custome css */
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+    
+    /* FIX: Eliminar espacio enorme en blanco en top banner */
+    .top-banner {
+        padding: 8rem 0 5rem !important;
+        min-height: auto !important;
+    }
+    
+    .top-banner h1 {
+        font-size: 2rem;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* story section */
+    .story-section {
+        height: auto;
+        padding: 3rem 1rem;
+    }
+    
+    /* FIX: Prevenir solapamiento de texto en todas las secciones */
+    .container,
+    .text-content,
+    .footer-content > * {
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    /* Asegurar que el texto no se salga */
+    * {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    p, h1, h2, h3, h4, h5, h6, li, a, span {
+        max-width: 100% !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+    
+    /* FIX: Contenido del footer - evitar solapamiento */
+    .footer-links h4,
+    .footer-contact h4,
+    .footer-social h4,
+    .footer-links li,
+    .footer-contact p {
+        white-space: normal !important;
+        line-height: 1.5 !important;
+    }
+    
+    /* carousel design */
+    .testimonial-section .carousel-item {
+        padding: 5rem 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .testimonial-section .carousel-item .carousel-caption p {
+        padding: 0 !important;
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+    
+    /* newsletter */
+    .newsletter {
+        width: 90%;
+    }
+    
+    .newsletter .main-btn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    /* FIX: Botones responsivos */
+    .main-btn,
+    .white-btn {
+        width: 100% !important;
+        margin: 12px 24px 0 !important;
+        text-align: center !important;
+        display: block !important;
+        padding: 8px 0 !important;
+    }
+    
+    /* wrapper spacing */
+    .wrapper {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    .text-content {
+        width: 90%;
+    }
+    
+    /* about section */
+    .about-section .text-sec {
+        padding-left: 0;
+        padding-top: 2rem;
+    }
+    
+    /* food type */
+    .food-type ul li {
+        margin-left: 25px;
+    }
+    
+    .food-type ul li::before {
+        left: -1.8rem;
+    }
+    
+    /* explore food cards */
+    .explore-food .card {
+        margin-bottom: 2rem;
+    }
+    
+    /* FIX: Footer en móviles - evitar solapamiento */
+    footer {
+        margin-top: 2rem !important;
+        padding: 2rem 1rem !important;
+    }
+    
+    .footer-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        padding: 0 1rem !important;
+        text-align: center !important;
+    }
+    
+    .footer-social {
+        text-align: center !important;
+    }
+    
+    .footer-contact p {
+        justify-content: center !important;
+    }
+    
+    .footer-links a:hover {
+        transform: none !important;
+    }
+    
+    /* footer link */
+    .footer .footer-link,
+    .footer a i {
+        padding: 0 0.5rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   PARA MÓVILES MUY PEQUEÑOS (330px y menos)
+-------------------------------------------------------------------------- */
+@media (max-width: 330px) {
+    .testimonial-section .carousel-item {
+        padding: 4rem 1rem;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        line-height: 1.8rem;
+    }
+    
+    .top-banner {
+        padding: 7rem 0 4rem !important;
+    }
+    
+    .footer-content {
+        padding: 0 0.5rem !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   CORRECCIONES ESPECÍFICAS PARA IPHONE/IOS
+-------------------------------------------------------------------------- */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 767px) {
+        /* Ajustes específicos para Safari iOS */
+        .navbar-collapse {
+            -webkit-overflow-scrolling: touch !important;
+            padding-top: 80px !important; /* Espacio para la barra de estado */
+        }
+        
+        /* Evitar zoom automático en inputs en iOS */
+        input,
+        select,
+        textarea {
+            font-size: 16px !important;
+        }
+        
+        /* Asegurar que los botones sean tocables */
+        button,
+        .main-btn,
+        .white-btn,
+        .nav-link {
+            min-height: 44px !important; /* Tamaño mínimo táctil de Apple */
+        }
+    }
+    
+    /* iPhone X/XS/11 Pro */
+    @media only screen 
+        and (device-width: 375px) 
+        and (device-height: 812px) 
+        and (-webkit-device-pixel-ratio: 3) {
+        
+        .navbar-collapse {
+            padding-top: 88px !important; /* Safe area para notch */
+        }
+        
+        .top-banner {
+            padding-top: 100px !important;
+        }
+    }
+    
+    /* iPhone 12/13 */
+    @media only screen 
+        and (device-width: 390px) 
+        and (device-height: 844px) 
+        and (-webkit-device-pixel-ratio: 3) {
+        
+        .navbar-collapse {
+            padding-top: 94px !important;
+        }
+    }
+}
+
+/* --------------------------------------------------------------------------
+   UTILIDADES ADICIONALES
+-------------------------------------------------------------------------- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}

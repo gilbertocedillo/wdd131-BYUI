@@ -8,203 +8,192 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/quiz.css">
+    <link rel="stylesheet" href="styles/styles2.css">
 </head>
 <body>
     <!-- Navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg navigation-wrap">
+        <nav class="navbar navbar-expand-lg navigation-wrap" aria-label="Main Navigation">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="CyberSafe Logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
-                    <i class="fas fa-bars navbar-toggler-icon"></i>
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/image.png" alt="CyberSafe Advocacy Logo" class="navbar-logo-icon">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <i class="fas fa-bars navbar-toggler-icon" aria-hidden="true"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="resources.html">Resources</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="quiz.html">Quiz</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="site-plan.html">Site Plan</a>
-                        </li>
-                        <li><button class="main-btn">(555) 123-4567</button></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="quiz.html">Quiz</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Personalsite/Site-plan/site-plan.html">Site Plan</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
+    <!-- Main Quiz Content -->
     <main class="quiz-container">
         <div class="container">
-            <div class="quiz-header">
-                <h2>Cybersecurity Knowledge Quiz</h2>
+            <header class="quiz-header">
+                <h1>Cybersecurity Knowledge Quiz</h1>
                 <p>Test your understanding of online safety with 10 multiple-choice questions.</p>
-            </div>
+            </header>
 
-            <!-- Quiz Control Buttons -->
-            <div class="quiz-control-buttons">
-                <button id="startQuizBtn" class="btn btn-success">
-                    <i class="fas fa-play me-2"></i>Start Quiz
+            <!-- Quiz Controls -->
+            <section class="quiz-control-buttons" aria-label="Quiz Controls">
+                <button id="startQuizBtn" class="btn btn-success" type="button">
+                    <i class="fas fa-play me-2" aria-hidden="true"></i>Start Quiz
                 </button>
-                <button id="pauseQuizBtn" class="btn btn-warning" disabled>
-                    <i class="fas fa-pause me-2"></i>Pause
+                <button id="pauseQuizBtn" class="btn btn-warning" type="button" disabled>
+                    <i class="fas fa-pause me-2" aria-hidden="true"></i>Pause
                 </button>
-                <button id="restartQuizBtn" class="btn btn-secondary">
-                    <i class="fas fa-redo me-2"></i>Restart
+                <button id="restartQuizBtn" class="btn btn-secondary" type="button">
+                    <i class="fas fa-redo me-2" aria-hidden="true"></i>Restart
                 </button>
-                <button id="resetTimerBtn" class="btn btn-info">
-                    <i class="fas fa-sync-alt me-2"></i>Reset Timer
+                <button id="resetTimerBtn" class="btn btn-info" type="button">
+                    <i class="fas fa-sync-alt me-2" aria-hidden="true"></i>Reset Timer
                 </button>
-            </div>
+            </section>
 
-            <div class="quiz-progress">
-                <div class="progress-bar">
+            <!-- Progress -->
+            <section class="quiz-progress" aria-label="Quiz Progress">
+                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
                     <div class="progress-fill" id="progressFill"></div>
                 </div>
-                <div class="progress-info">
-                    Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span>
-                </div>
-            </div>
+                <p class="progress-info">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">10</span></p>
+            </section>
 
+            <!-- Quiz Questions & Sidebar -->
             <div class="quiz-content-simple">
-                <div class="question-card" id="questionCard">
-                    <div class="question-header">
-                        <h3 id="questionText">Loading question...</h3>
-                    </div>
+                <article class="question-card" id="questionCard">
+                    <header class="question-header">
+                        <h2 id="questionText">Loading question...</h2>
+                    </header>
+                    <section class="options-container" id="optionsContainer" aria-label="Answer Options">
+                        <!-- JS populates options -->
+                    </section>
+                    <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
 
-                    <div class="options-container" id="optionsContainer">
-                        <!-- Options will be loaded by JavaScript -->
-                    </div>
-
-                    <div class="quiz-feedback" id="quizFeedback"></div>
-
-                    <div class="quiz-navigation">
-                        <button id="prevBtn" class="btn btn-outline-secondary" disabled>
-                            <i class="fas fa-arrow-left me-2"></i>Previous
+                    <nav class="quiz-navigation" aria-label="Question Navigation">
+                        <button id="prevBtn" class="btn btn-outline-secondary" type="button" disabled>
+                            <i class="fas fa-arrow-left me-2" aria-hidden="true"></i>Previous
                         </button>
-                        <div class="quiz-score-display">
+                        <div class="quiz-score-display" aria-label="Current Score">
                             <span>Score:</span>
                             <strong id="currentScore">0</strong>/<span id="maxScore">10</span>
                         </div>
-                        <button id="nextBtn" class="btn btn-primary">
-                            Next<i class="fas fa-arrow-right ms-2"></i>
+                        <button id="nextBtn" class="btn btn-primary" type="button">
+                            Next<i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
                         </button>
-                    </div>
-                </div>
+                    </nav>
+                </article>
 
-                <aside class="quiz-sidebar-simple">
-                    <div class="score-display">
-                        <h4><i class="fas fa-trophy"></i> Your Score</h4>
+                <aside class="quiz-sidebar-simple" aria-label="Quiz Sidebar">
+                    <section class="score-display" aria-label="Score Summary">
+                        <h3><i class="fas fa-trophy" aria-hidden="true"></i> Your Score</h3>
                         <div class="score-circle-simple">
                             <span id="scorePercentage">0</span>%
                         </div>
                         <p id="scoreMessage">Start the quiz to see your score!</p>
-                    </div>
+                    </section>
 
-                    <div class="timer-display">
-                        <h4><i class="fas fa-clock"></i> Time Spent</h4>
+                    <section class="timer-display" aria-label="Quiz Timer">
+                        <h3><i class="fas fa-clock" aria-hidden="true"></i> Time Spent</h3>
                         <div class="time-display">
                             <span id="minutes">00</span>:<span id="seconds">00</span>
                         </div>
                         <small>Click Start Quiz to begin timing</small>
-                    </div>
+                    </section>
 
-                    <div class="quiz-tips">
-                        <h4><i class="fas fa-lightbulb"></i> Quiz Tips</h4>
+                    <section class="quiz-tips" aria-label="Quiz Tips">
+                        <h3><i class="fas fa-lightbulb" aria-hidden="true"></i> Quiz Tips</h3>
                         <ul>
                             <li>Read each question carefully</li>
                             <li>You can pause and resume anytime</li>
                             <li>Review explanations after answering</li>
                             <li>Use keyboard shortcuts (1-4, Space, R)</li>
                         </ul>
-                    </div>
+                    </section>
                 </aside>
             </div>
 
-            <!-- Results Section -->
-            <div class="results-section" id="resultsSection" style="display: none;">
+            <!-- Results -->
+            <section class="results-section" id="resultsSection" style="display: none;" aria-label="Quiz Results">
                 <div class="results-card">
-                    <div class="results-header">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>Quiz Results</h3>
-                    </div>
+                    <header class="results-header">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        <h2>Quiz Results</h2>
+                    </header>
 
-                    <div class="results-score">
+                    <section class="results-score" aria-label="Final Score">
                         <div class="final-score">
                             <span id="finalScore">0</span>/<span>10</span>
                         </div>
                         <div class="score-percentage">
                             <span id="finalPercentage">0</span>%
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="results-message" id="resultsMessage">
-                        <!-- Message will be loaded by JavaScript -->
-                    </div>
+                    <section class="results-message" id="resultsMessage" aria-live="polite">
+                        <!-- JS message -->
+                    </section>
 
-                    <div class="results-recommendations">
-                        <h4>Recommendations</h4>
+                    <section class="results-recommendations">
+                        <h3>Recommendations</h3>
                         <ul class="recommendations-list" id="recommendationsList">
-                            <!-- Recommendations will be loaded by JavaScript -->
+                            <!-- JS recommendations -->
                         </ul>
-                    </div>
+                    </section>
 
-                    <div class="results-actions">
-                        <button id="retakeQuiz" class="btn btn-primary">
-                            <i class="fas fa-redo me-2"></i>Retake Quiz
+                    <section class="results-actions">
+                        <button id="retakeQuiz" class="btn btn-primary" type="button">
+                            <i class="fas fa-redo me-2" aria-hidden="true"></i>Retake Quiz
                         </button>
-                        <button id="shareResults" class="btn btn-secondary">
-                            <i class="fas fa-share-alt me-2"></i>Share Results
+                        <button id="shareResults" class="btn btn-secondary" type="button">
+                            <i class="fas fa-share-alt me-2" aria-hidden="true"></i>Share Results
                         </button>
                         <a href="resources.html" class="btn btn-outline-primary">
-                            <i class="fas fa-book me-2"></i>Learn More
+                            <i class="fas fa-book me-2" aria-hidden="true"></i>Learn More
                         </a>
-                    </div>
+                    </section>
                 </div>
-            </div>
+            </section>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" aria-label="Site Footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     <h3>CyberSafe Advocacy</h3>
                     <p>Making cybersecurity accessible to everyone.</p>
                 </div>
-
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="quiz.html">Security Quiz</a></li>
                         <li><a href="resources.html">Resources</a></li>
-                        <li><a href="site-plan.html">Site Plan</a></li>
+                        <li><a href="/Personalsite/Site-plan/site-plan.html">Site Plan</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-contact">
                     <h4>Contact</h4>
-                    <p><i class="fas fa-envelope"></i> info@cybersafe.org</p>
-                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Rexburg, ID, USA</p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> info@cybersafe.org</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rexburg, ID, USA</p>
                 </div>
-
                 <div class="footer-social">
                     <h4>Follow Us</h4>
-                    <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 <p>&copy; <span id="currentYear"></span> CyberSafe Advocacy. All rights reserved.</p>
                 <p>This site is for educational purposes only.</p>

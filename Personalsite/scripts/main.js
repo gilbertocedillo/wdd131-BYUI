@@ -3,8 +3,8 @@ import { LanguageManager } from './language.js';
 
 // DOM Elements
 const themeToggle = document.getElementById('themeToggle');
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const mainNav = document.querySelector('.main-nav');
+const mobileMenuBtn = document.querySelector('.navbar-toggler');
+const mainNav = document.getElementById('navbarText');
 const passwordInput = document.getElementById('passwordInput');
 const togglePasswordBtn = document.getElementById('togglePassword');
 const strengthBar = document.getElementById('strengthBar');
@@ -204,29 +204,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const statsAnimator = new StatsAnimator();
   const languageManager = new LanguageManager();
 
-  // Mobile menu toggle
+  // Navbar elements
+  const mobileMenuBtn = document.querySelector('.navbar-toggler');
+  const mainNav = document.getElementById('navbarText');
+
+  // ===== Mobile menu toggle with ARIA =====
   if (mobileMenuBtn && mainNav) {
     mobileMenuBtn.addEventListener('click', () => {
-      mainNav.classList.toggle('active');
-      mobileMenuBtn.setAttribute('aria-expanded', mainNav.classList.contains('active'));
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      mobileMenuBtn.setAttribute('aria-expanded', String(!isExpanded));
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-        mainNav.classList.remove('active');
+        mainNav.classList.remove('show'); // Bootstrap uses .collapse.show
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
       }
     });
   }
 
-  // Password analyzer
+  // ===== Password analyzer =====
   if (passwordInput) {
     passwordInput.addEventListener('input', (e) => {
       passwordAnalyzer.updateUI(e.target.value);
     });
 
-    // Toggle password visibility
     if (togglePasswordBtn) {
       togglePasswordBtn.addEventListener('click', () => {
         const type = passwordInput.type === 'password' ? 'text' : 'password';
@@ -239,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Animate stats when they come into view
+  // ===== Animate stats when they come into view =====
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -250,20 +253,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.5 });
 
   const statsSection = document.querySelector('.stats-section');
-  if (statsSection) {
-    observer.observe(statsSection);
-  }
+  if (statsSection) observer.observe(statsSection);
 
-  // Set current year in footer
+  // ===== Set current year in footer =====
   const yearElement = document.querySelector('footer p');
-  if (yearElement && yearElement.textContent.includes('2025')) {
-    yearElement.textContent = yearElement.textContent.replace('2025', new Date().getFullYear());
+  if (yearElement) {
+    yearElement.textContent = yearElement.textContent.replace(/\d{4}/, new Date().getFullYear());
   }
 
-  // Keyboard navigation for accessibility
+  // ===== Keyboard navigation for accessibility =====
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mainNav.classList.contains('active')) {
-      mainNav.classList.remove('active');
+    if (e.key === 'Escape' && mainNav.classList.contains('show')) {
+      mainNav.classList.remove('show');
       mobileMenuBtn.setAttribute('aria-expanded', 'false');
     }
   });
